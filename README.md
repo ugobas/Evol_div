@@ -125,8 +125,6 @@ Contact divergence  CD=-log((q-q0(L))/(1-q0(L)) (Pascual-Garcia et al Proteins 2
 TM_divergence=-log((TM-TM0)/(1-TM0)) TM0=0.167 (Zhang & Skolnick Proteins 2004)
 PC_divergence
 They are printed both for the orignal MSA and for structurally modified MSA that target secondary structure (SS_ali), TM score (TM_ali), contact overlap (CO_ali) or PC_sim (PC_ali).
-
-
   
 They are printed both for the orignal MSA and for the modified alignments.
--------
+
