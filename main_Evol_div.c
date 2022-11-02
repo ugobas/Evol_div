@@ -200,8 +200,8 @@ int main(int argc, char **argv)
   // INPUT
   NORM=0; // Normalize with minimum (0) maximum (1) or geometric mean (2)?
   NORMA=0; // Normalize with nali (1) or with NORM (0)?
-  char PDB_DIR[100]="./", PDB_EXT[10]="", OUTG[10]="TN";
-  char file_ali[200], file_ali_str[200]="\0", file_fun[200], name_in[80]="";
+  char PDB_DIR[100]="./", PDB_EXT[10]=".pdb", OUTG[10]="TN";
+  char file_ali[200], file_ali_str[200]="\0", file_fun[200], name_in[80]="\0";
   Get_input(file_ali, file_ali_str, file_fun, name_in, PDB_DIR, PDB_EXT,
 	    OUTG, &NORM, &ALI_SS, &SHIFT_MAX, &SS_MULT,
 	    &PRINT_SIM, &PRINT_CV, &PRINT_DIV, &PRINT_PAIR, &PRINT_CLIQUE,
