@@ -21,7 +21,7 @@ struct protein{
   int len;
   int nca;
   char name_file[20];
-  char name[CHARPDB];
+  char name[30];
   char chain;
   char *ss;
   char *aseq;

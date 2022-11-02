@@ -23,19 +23,20 @@ int ***Build_outgroups(int ***N_out, struct treenode *node, int n)
   *N_out=malloc(n*sizeof(int *));
   int out[n], i, j, k;
   for(i=0; i<n; i++){
-    (*N_out)[i]=malloc((i-1)*sizeof(int));
-    outgroup[i]=malloc((i-1)*sizeof(int *));
+    (*N_out)[i]=malloc(i*sizeof(int));
+    outgroup[i]=malloc(i*sizeof(int *));
     for(j=0; j<i; j++){
       int m=0; // number of outgroups
       for(k=0; k<n; k++){
 	if((k==i)||(k==j))continue;
-	if(1){ // Condition for outgroups
+	if(0){ // Condition for outgroups
 	  out[m]=k; m++;
 	}
       }
       (*N_out)[i][j]=m;
-      outgroup[i][j]=malloc(m*sizeof(int));
-      for(k=0; k<m; k++)outgroup[i][j][k]=out[k];
+      int *out2=malloc(m*sizeof(int));
+      for(k=0; k<m; k++)out2[k]=out[k];
+      outgroup[i][j]=out2;
     }
   }
   return(outgroup);

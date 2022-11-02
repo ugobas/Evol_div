@@ -2,19 +2,39 @@
 #NAME 50044_PDB_new               ! Name of output file
 #ALI=AlnSeq_Ploop_C1.fas        ! 
 #NAME Ploop_C1_MAFFT
-ALI=AlnSeq_Globins_C1.fas        ! 
-NAME Globins_C1_MAFFT
+#ALI=AlnSeq_Globins_C1.fas        ! 
+#NAME Globins_C1_MAFFT
+#ALI=AlnSeq_Globins_C1_tcoffee.fas        ! 
+#NAME Globins_C1_tcoffee
 #ALI=AlnSeq_NADP_C1.fas
 #NAME NADP_C1_MAFFT
+#ALI=AlnSeq_Aldolase_C1_tcoffee.fas
+#NAME Aldolase_C1_tcoffee
+#ALI=AlnSeq_Aldolase_C1.fas
+#NAME Aldolase_C1_MAFFT
 #ALI=InputMammoth_Aldolase_C1.list-FINAL_MOD.fas
 #NAME Aldolase_C1_Mammoth
+#ALI=InputMammoth_Aldolase_C2.list-FINAL_MOD.fas
+#NAME Aldolase_C2_Mammoth
+#ALI=InputMammoth_Ploop_C1.list-FINAL_MOD.fas
+#NAME Ploop_C1_Mammoth
+ALI=InputMammoth_Ploop_C2.list-FINAL_MOD.fas
+NAME Ploop_C2_Mammoth
+ALI=InputMammoth_NADP_C1.list-FINAL_MOD.fas
+NAME NADP_C1_Mammoth
+#ALI=InputMammoth_Globins_C1.list-FINAL_MOD.fas
+#NAME Globins_C1_Mammoth
+#
 NORM=MIN    ! Normalize seq.id TM Cont.overlap based on MIN MAX or MEAN length
 ALI_SS=1    ! Correct multiple sequence alignment with secondary structure?
-SS_MULT=0   ! Correction pairwise (0) or multiple (1)?
-SHIFT_MAX=8 ! Maximum shift when correcting MSA
+SS_MULT=1   ! Correction pairwise (0) or multiple (1)?
+SHIFT_MAX=9 ! Maximum shift when correcting MSA
 #STR_ALI=   ! Structure alignment if any
 PDBDIR=/data/ortizg/databases/pdb/ ! path to pdb files
 PDBEXT=.pdb                        ! Extension of pdb files
 #PDBDIR=/data/ortizg/databases/astral_40/
-PRINT_SIM=0    ! Print structure similarity
-PRINT_CV=0;    ! Compute and print molecular Clock Violations
+PRINT_SIM=1    ! Print structure similarity
+PRINT_DIV=0    ! Compute and print divergence measures
+PRINT_CV=0     ! Compute and print molecular Clock Violations
+PRINT_PAIR=0   ! Print pairwise alignments made with PC
+PRINT_CLIQUE=1 ! Print multiple alignments based on cliques of pairwise ones

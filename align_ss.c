@@ -35,7 +35,8 @@ int Set_sec_str(struct protein *prots, int N_pdb)
 void Write_ali_ss(int **Prot_ali_ss, struct protein *prots,
 		  int N_pdb, int N_ali, char *name_in)
 {
-  char f_ali_ss[100]; sprintf(f_ali_ss,"%s_ss_ali.fasta",name_in);
+  char f_ali_ss[100];
+  sprintf(f_ali_ss,"%s.ss_ali.msa",name_in);
   printf("Writing %s\n", f_ali_ss);
   FILE *f_ali=fopen(f_ali_ss,"w");
   for(int i=0; i<N_pdb; i++){
@@ -55,9 +56,10 @@ void Write_ali_ss(int **Prot_ali_ss, struct protein *prots,
 void Write_ss_ali(int **ali, struct protein *prots, int N_pdb, int N_ali,
 		  char *name, char *what)
 {
-  char f_ali_ss[100]; sprintf(f_ali_ss,"%s_%s_ss.fasta",name,what);
+  char f_ali_ss[100]; sprintf(f_ali_ss,"%s.%s.ss.msa",name,what);
   printf("Writing %s\n", f_ali_ss);
   FILE *f_ali=fopen(f_ali_ss,"w");
+  fprintf(f_ali,"# Alignment type: %s\n", what);
   for(int i=0; i<N_pdb; i++){
     fprintf(f_ali,">%s\n",prots[i].name);
     for(int j=0; j<N_ali; j++){
@@ -213,7 +215,7 @@ int Align_ss(int **Ali,
 	  if(endgap[j]>endmax){endmax=endgap[j]; igap2=j;}
 	}
 	int igap=-1, res1=-1, res2=-1;
-	int shift_min=1000, ss_match_max=-10, store_res, gap1;
+	int shift_min=1000, ss_match_max=-10, store_res=0, gap1=0;
 	if(igap1>=0){
 	  for(int store=store_l; store>=0; store--){
 	    if(ali[store]<0)break;

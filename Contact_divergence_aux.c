@@ -241,7 +241,7 @@ float Contact_overlap(int *ali, float *cali, int *id_3D, float c_ave,
 
   for(int i1=0; i1<N1; i1++){
     i2=ali[i1]; if(i2<0)continue;
-    int ni3D, n3D, niid, nid; float ci;
+    int ni3D=0, n3D=0, niid=0, nid=0; float ci=0;
     if(ali_cont_ct){ci=ncont1[i1]*ncont2[i2];}
     if(ali_cont_sup){if(id_3D[i1]>0){ni3D=1;}else{ni3D=0;}}
     if(ali_cont_aaid && seq1){if(seq1[i1]==seq2[i2]){niid=1;}else{niid=0;}}

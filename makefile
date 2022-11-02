@@ -2,24 +2,25 @@ PROG=Evol_div
 
 # Sources and objects
 HEAD= allocate.h    	# header files
-CSRC= main_Evol_div.c  CV_statistics.c tree.c D_Cont.c \
+CSRC= main_Evol_div.c CV_statistics.c tree.c D_Cont.c clique_msa.c \
       Contact_divergence_aux.c PC_ali.c allocate.c align_ss.c \
-      read_structures.c read_pdb_mammoth.c contact_list.c \
+      read_structures.c read_pdb_mammoth.c contact_list.c Print_pairwise.c \
       NeedlemanWunsch.c Profit_aux.c tm_score.c McLachlan_float.c
-# seq_sim.c
+# seq_sim.c rank.c
 
-COBJ= main_Evol_div.o CV_statistics.o tree.o D_Cont.o \
+COBJ= main_Evol_div.o CV_statistics.o tree.o D_Cont.o clique_msa.o \
       Contact_divergence_aux.o  PC_ali.o allocate.o align_ss.o \
-      read_structures.o read_pdb_mammoth.o contact_list.o \
+      read_structures.o read_pdb_mammoth.o contact_list.o Print_pairwise.o \
       NeedlemanWunsch.o Profit_aux.o tm_score.o McLachlan_float.o
-# seq_sim.o
+# seq_sim.o rank.o
 
 ####################
 # Compiler flags
 CC=gcc
 FC=f77
+
 FFLAG=-g -ffixed-line-length-132
-CFLAGS= -Wall -std=c99 -pedantic -g -pg -fbounds-check -D_FILE_OFFSET_BITS=64 -D_LARGE_FILE_SOURCE
+CFLAGS= -Wall -std=c99 -O2 -pedantic -g -pg -fbounds-check -D_FILE_OFFSET_BITS=64 -D_LARGE_FILE_SOURCE
 LDFLAGS=-lm -lg2c
 LDFLAGS=-lm -L/usr/lib64/libg2c.so.0.0.0
 

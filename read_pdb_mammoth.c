@@ -81,7 +81,9 @@ int Read_pdb(struct protein *prot, char *filename, char *chain_to_read)
  
     // Check chain
     chain=string[21];
-    if((nres<=0)&&((*chain_to_read)=='\0'))*chain_to_read=chain; 
+    if((nres<=0)&&((*chain_to_read)=='\0')){
+      *chain_to_read=chain; printf("chain to read: %c\n", chain);
+    }
     if((*chain_to_read)=='.'){chain='.';}
     if(((*chain_to_read)!='*')&&((*chain_to_read)!=chain)){
       if(nres>0){break;}else{continue;}
